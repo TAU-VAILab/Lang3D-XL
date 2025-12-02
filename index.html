@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet'>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="xdvJxvo39Ei0nahgmgXGp9DCslFea8wH789x6mmAY-A" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <meta property="og:site_name" content="Lang3D-XL: Language Embedded 3D Gaussians for Large-scale Scenes" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="Lang3D-XL: Language Embedded 3D Gaussians for Large-scale Scenes" />
+    <meta property="og:description" content="Efficiently distilling language features into large-scale, in-the-wild 3D Gaussian scenes." />
+    <meta property="og:url" content="https://tau-vailab.github.io/Lang3D-XL/" />
+    <meta property="og:image" content="./webpage_assets/thumbnail.png" />
+
+    <title>Lang3D-XL: Language Embedded 3D Gaussians for Large-scale Scenes</title>
+    <link rel="icon" href="./webpage_assets/thumbnail.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="page-container">
+    
+    <h1 class="ourh1" align="center">Lang3D-XL</h1>
+    <h2 class="ourh2" align="center">Language Embedded 3D Gaussians for Large-scale Scenes</h2>
+    
+    <section class="authors_block">
+        <div class="authors" align="center">
+            <span class="author-block"><a href="https://www.linkedin.com/in/shai-krakovski-8144083b/" target="_blank">Shai Krakovsky</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://galfiebelman.github.io/" target="_blank">Gal Fiebelman</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://sagiebenaim.github.io/" target="_blank">Sagie Benaim</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://www.hadarelor.com/" target="_blank">Hadar Averbuch-Elor</a><sup>3</sup></span>
+        </div>
+
+        <div class="affiliations" align="center">
+            <span class="author-block2"><sup>1</sup>Tel Aviv University, </span>
+            <span class="author-block2"><sup>2</sup>The Hebrew University of Jerusalem, </span>
+            <span class="author-block2"><sup>3</sup>Cornell University</span>
+        </div>
+    </section>
+
+    <div class="column has-text-centered" style="margin-bottom: 0px; margin-top: 10px;">
+        <h3 style="color: #00098b; font-weight: 700; font-size: 24px;">SIGGRAPH Asia 2025</h3>
+    </div>
+
+    <div class="column has-text-centered">
+        <div class="publication-links" align="center">
+
+          <span class="link-block">
+            <a href="#" class="paper-link" style="display: inline-block">
+                <button class="button">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </button>
+            </a>
+          </span>
+
+          <span class="link-block">
+            <a href="" style="display: inline-block">
+                <button class="button">
+                    <span class="icon">
+                        <i class="fa fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </button>
+            </a>
+          </span>
+          
+        </div>
+    </div>
+
+    <div class="video-container">
+        <video autoplay loop muted width="60%" class="result-video">
+            <source src="webpage_assets/teaser.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <section class="tldr-section" width="100%">
+        <div class="intro-container has-text-justified">
+            <div class="intro-paragraph">
+                <p>
+                    <br>
+                    <span class="intro-paragraph_bold">TL;DR We introduce Lang3D-XL, a method for efficiently distilling language features into large-scale, 
+                        in-the-wild 3D Gaussian scenes.</span><br><br>
+                    <!-- Our method leverages an extremely compact semantic bottleneck (just 3 dimensions per Gaussian) and a novel Attenuated Downsampler module to 
+                    efficiently distill language features into large-scale 3D Gaussian Scenes. As illustrated above, <strong>Land3D-XL</strong> enables 
+                    open-vocabulary querying at interactive speeds. -->
+                    NEED TO ADD CORRECT TEXT BASED ON CHOSEN VIDEO
+                </p>
+            </div>
+        </div>
+    </section> 
+
+    <section class="abstract-section" width="100%">
+        <div class="abstract-container has-text-justified">
+            <hr>
+            <h3 align="center">Abstract</h3><br>
+            <p class="has-text-justified">
+            Embedding a language field in a 3D representation enables richer semantic understanding of spatial environments by linking 
+            geometry with descriptive meaning. This allows for a more intuitive human-computer interaction, enabling querying or 
+            editing scenes using natural language, and could potentially improve tasks like scene retrieval, navigation, and multimodal reasoning. 
+            While such capabilities could be transformative, in particular for large-scale scenes, we find that recent feature distillation 
+            approaches cannot effectively learn over massive Internet data due to challenges in semantic feature misalignment and inefficiency 
+            in memory and runtime. To this end, we propose a novel approach to address these challenges. First, we introduce extremely 
+            low-dimensional semantic bottleneck features as part of the underlying 3D Gaussian representation. These are processed by rendering and 
+            passing them through a multi-resolution, feature-based, hash encoder. This significantly improves efficiency both in runtime and 
+            GPU memory. Second, we introduce an Attenuated Downsampler module and propose several regularizations addressing the semantic misalignment of 
+            ground truth 2D features. We evaluate our method on the in-the-wild HolyScenes dataset and demonstrate that it surpasses existing approaches 
+            in both performance and efficiency.
+            </p>
+        </div>
+    </section>
+
+<section class="results-section" width="100%">
+    <div class="abstract-container">
+        <hr>
+        <h3 align="center">3D Localization Results</h3>
+        <br>
+
+        <!-- Slider Container -->
+        <div class="results-slider-wrapper">
+            <!-- Left Arrow -->
+            <button class="slider-arrow slider-arrow-left" onclick="changeSlide(-1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <!-- Slides Container -->
+            <div class="results-slides-container">
+                <div class="results-slides-inner">
+
+                 <div class="results-slide clone">
+                        <div class="results-row">
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-015.png" alt="Portals">
+                                <p class="result-label">Portals</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-016.png" alt="Pinnacles">
+                                <p class="result-label">Pinnacles*</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-017.png" alt="Pinnacles">
+                                <p class="result-label">Pinnacles*</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-018.png" alt="Statues">
+                                <p class="result-label">Statues</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-019.png" alt="Stone Staircase">
+                                <p class="result-label">Stone Staircase</p>
+                            </div>
+                        </div>
+                        <p2 class="row-footnote">
+                            *Pinnacles are pyramidal or conical crowning ornaments found at tops of architectural elements.
+                        </p2>
+                </div>
+
+                <!-- Slide 1 -->
+                    <div class="results-slide" data-index="0">
+                        <div class="results-row">
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-000.png" alt="Ornamental Arches">
+                                <p class="result-label">Ornamental Arches</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-001.png" alt="Pillars">
+                                <p class="result-label">Pillars*</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-002.png" alt="Rose Windows">
+                                <p class="result-label">Rose Windows†</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-003.png" alt="Rose Windows">
+                                <p class="result-label">Rose Windows†</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-004.png" alt="Balustrades">
+                                <p class="result-label">Balustrades‡</p>
+                            </div>
+                        </div>
+                        <p2 class="row-footnote">
+                            *Pillars are vertical structural support elements, typically cylindrical and ornamental arches are curved structural elements that span openings between pillars or walls.<br>
+                            †A rose window is a large, circular stained glass window featuring intricate patterns that resemble the petals of a rose.<br>
+                            ‡A balustrade is a row of small columns (balusters) topped by a rail, serving as a barrier.
+                        </p2>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="results-slide" data-index="1">
+                        <div class="results-row">
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-005.png" alt="Mihrab">
+                                <p class="result-label">Mihrab*</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-006.png" alt="Domes">
+                                <p class="result-label">Domes</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-007.png" alt="Turrets">
+                                <p class="result-label">Turrets</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-008.png" alt="Calligraphy Panels">
+                                <p class="result-label">Calligraphy Panels†</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-009.png" alt="Muqaranas">
+                                <p class="result-label">Muqaranas‡</p>
+                            </div>
+                        </div>
+                        <p2 class="row-footnote">
+                            *A mihrab is a semicircular niche in the wall of a mosque.<br>
+                            †Calligraphy panels are decorative architectural elements featuring artistic handwritten text.<br>
+                            ‡Muqarnas are a form of three-dimensional decoration in Islamic architecture.
+                        </p2>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="results-slide" data-index="2">
+                        <div class="results-row">
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-010.png" alt="Reliefs">
+                                <p class="result-label">Reliefs*</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-011.png" alt="Reliefs">
+                                <p class="result-label">Reliefs*</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-012.png" alt="Windows">
+                                <p class="result-label">Windows</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-013.png" alt="Semi Circular Arch">
+                                <p class="result-label">Semi Circular Arch</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-014.png" alt="Pediment">
+                                <p class="result-label">Pediment†</p>
+                            </div>
+                        </div>
+                        <p2 class="row-footnote">
+                            *Reliefs are sculptural forms raised from a background, typically a flat surface.<br>
+                            †A pediment is a triangular or curved decorative element typically found above the entrance of classical buildings, supported by columns.
+                        </p2>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="results-slide" data-index="3">
+                        <div class="results-row">
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-015.png" alt="Portals">
+                                <p class="result-label">Portals</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-016.png" alt="Pinnacles">
+                                <p class="result-label">Pinnacles*</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-017.png" alt="Pinnacles">
+                                <p class="result-label">Pinnacles*</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-018.png" alt="Statues">
+                                <p class="result-label">Statues</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-019.png" alt="Stone Staircase">
+                                <p class="result-label">Stone Staircase</p>
+                            </div>
+                        </div>
+                        <p2 class="row-footnote">
+                            *Pinnacles are pyramidal or conical crowning ornaments found at tops of architectural elements.
+                        </p2>
+                    </div>
+
+                    <div class="results-slide clone">
+                        <div class="results-row">
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-000.png" alt="Ornamental Arches">
+                                <p class="result-label">Ornamental Arches</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-001.png" alt="Pillars">
+                                <p class="result-label">Pillars*</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-002.png" alt="Rose Windows">
+                                <p class="result-label">Rose Windows†</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-003.png" alt="Rose Windows">
+                                <p class="result-label">Rose Windows†</p>
+                            </div>
+                            <div class="result-item">
+                                <img src="webpage_assets/localization/output-004.png" alt="Balustrades">
+                                <p class="result-label">Balustrades‡</p>
+                            </div>
+                        </div>
+                        <p2 class="row-footnote">
+                            *Pillars are vertical structural support elements, typically cylindrical and ornamental arches are curved structural elements that span openings between pillars or walls.<br>
+                            †A rose window is a large, circular stained glass window featuring intricate patterns that resemble the petals of a rose.<br>
+                            ‡A balustrade is a row of small columns (balusters) topped by a rail, serving as a barrier.
+                        </p2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Arrow -->
+            <button class="slider-arrow slider-arrow-right" onclick="changeSlide(1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Slide Indicators -->
+        <div class="slider-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+        </div>
+
+        <p class="has-text-justified">
+            <br>
+            We illustrate localization results of <strong>Land3D-XL</strong> over diverse architectural elements across multiple 
+            landmarks from the HolyScenes dataset. In particular, our approach effectively localizes esoteric architectural 
+            terminology while maintaining precise spatial localization across varied lighting conditions, viewpoints, 
+            and architectural styles. The segmentation masks (shown in color overlays) accurately capture the boundaries and extent 
+            of each queried architectural feature, demonstrating the effectiveness of our approach for 
+            localizing semantic concepts over large-scale scenes.
+        </p>
+
+    </div>
+</section>
+
+    <section class="method-section" width="100%">
+        <div class="abstract-container">
+            <hr>
+            <h3 align="center">How does it work?</h3>
+            <br>
+            <div class="im_container has-text-justified" width="90%" align="center">
+                <img align="center" src="./webpage_assets/overview.png" alt="Method Overview" width="100%">
+            </div> 
+            <p class="has-text-justified">
+                <br>
+            🌍 Given in-the-wild images of large-scale scenes, we first reconstruct the scene using 3D Gaussian Splatting, 
+            augmented with learnable low-dimensional semantic bottleneck features.<br><br>
+
+            🎨 We render these low-dimensional features and process them through a multi-resolution hash encoder 
+            that operates in feature space, enabling similar features across different spatial locations to share representations.<br><br>
+
+            🔍 The hash encoder outputs high-dimensional CLIP and DINOv2 features via a shallow MLP, which are 
+            then processed by our novel Attenuated Downsampler to mitigate semantic misalignments.<br><br>
+
+            ⚡ This enables interactive open-vocabulary querying of large-sacel, in-the-wild scenes, while maintaining high localization accuracy.<br><br>
+
+            📋 See our paper for details on how <strong>Land3D-XL</strong> achieves high-fidelity language embedding in challenging in-the-wild scenes.          
+          </p>
+        </div>
+    </section>
+
+
+    <p><br></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+</div>
+
+
+<script>
+let currentSlide = 1; // Start at 1 because of clone at beginning
+const slidesInner = document.querySelector('.results-slides-inner');
+const slides = document.querySelectorAll('.results-slide');
+const dots = document.querySelectorAll('.dot');
+const totalSlides = 4; // Your actual number of slides (not including clones)
+
+// Initialize position
+slidesInner.style.transform = `translateX(-100%)`;
+
+function updateDots(index) {
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+}
+
+function showSlide(n) {
+    slidesInner.style.transition = 'transform 0.6s ease-in-out';
+    currentSlide = n;
+    slidesInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // Update dots based on real slide position
+    let dotIndex = currentSlide - 1;
+    if (currentSlide === 0) dotIndex = totalSlides - 1; // Last slide
+    if (currentSlide === totalSlides + 1) dotIndex = 0; // First slide
+    updateDots(dotIndex);
+}
+
+function changeSlide(direction) {
+    const newSlide = currentSlide + direction;
+    showSlide(newSlide);
+    
+    // Handle wrap-around
+    setTimeout(() => {
+        if (currentSlide === 0) {
+            // Jumped to first clone, instantly move to last real slide
+            slidesInner.style.transition = 'none';
+            currentSlide = totalSlides;
+            slidesInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateDots(totalSlides - 1); // Keep last dot active
+        } else if (currentSlide === totalSlides + 1) {
+            // Jumped to last clone, instantly move to first real slide
+            slidesInner.style.transition = 'none';
+            currentSlide = 1;
+            slidesInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateDots(0); // Keep first dot active
+        }
+    }, 600); // Match transition duration
+}
+
+function goToSlide(n) {
+    showSlide(n + 1); // Offset by 1 because of clone
+}
+</script>
+
+
+</body>
+</html>

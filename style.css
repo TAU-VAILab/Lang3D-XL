@@ -1,0 +1,540 @@
+body {
+    font-family: 'Noto Sans', 'Segoe UI', Roboto, "Helvetica Neue", Arial, sans-serif;
+    width: 100%;
+    color: #4a4a4a;
+    background-color: #ffffff;
+    line-height: 1.5; /* Slightly tighter line height */
+}
+
+/* --- TYPOGRAPHY --- */
+
+h1 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 52px; /* Slightly smaller for tighter look */
+    color: #1a1a1a;
+    letter-spacing: -1.5px;
+    word-spacing: 2px;
+    line-height: 1.0; /* Very tight line height */
+    margin-top: 30px; /* Drastically reduced */
+    margin-bottom: 10px; /* Reduced */
+    font-weight: 800;
+}
+
+h2 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 35px;
+    margin-top: 10px; /* Reduced from 40 */
+    margin-bottom: 0px;
+    font-weight: 700;
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+}
+
+h3 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 35px;
+    margin-top: 0px; /* Reduced from 40 */
+    margin-bottom: 3px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+p {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 10px; /* Reduced paragraph spacing */
+}
+/* --- TEXT TAGS (Highlighters) --- */
+/* No background, specific colors, bold */
+
+p_Stat {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    color: #f2711c; /* Orange */
+    font-weight: 700;
+    background-color: transparent;
+}
+
+p_dyn {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    color: #8e44ad; /* Purple */
+    font-weight: 700;
+    background-color: transparent;
+}
+
+p_mesh {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    color: #c0392b; /* Red */
+    font-weight: 700;
+    background-color: transparent;
+}
+
+/* NEW TAG */
+p_appear {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    color: #008080; /* Teal */
+    font-weight: 700;
+    background-color: transparent;
+}
+
+p_b {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+li {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 17px;
+}
+
+/* --- LINKS & AUTHORS --- */
+
+.authors_block {
+    margin-bottom: 5px;
+}
+
+.author-block {
+    font-size: 20px; /* Slightly smaller */
+    margin: 0 8px;
+}
+
+.author-block a {
+    color: #209cee;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+
+.author-block a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.author-block2 {
+    font-size: 17px;
+    color: #666;
+    text-decoration: none;
+}
+
+.affiliations {
+    margin-top: 5px; /* Tight spacing */
+    margin-bottom: 0px;
+}
+
+/* --- BUTTONS --- */
+
+.publication-links {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.link-block {
+    margin: 0 4px;
+}
+
+.button {
+    padding: 8px 20px; /* Smaller padding */
+    background-color: #ffffff;
+    border-radius: 50px;
+    font-size: 15px;
+    color: #363636;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button:hover {
+    border-color: #b5b5b5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.button .icon {
+    margin-right: 6px;
+}
+
+/* --- INTERACTIVE BUTTONS --- */
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px; /* Tighter gap */
+    margin: 15px 0;
+}
+
+button[class^="prompt_title_"] {
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 6px; /* Slightly squarer */
+    padding: 10px 20px; /* Smaller padding */
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    border: none !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.prompt_title_red_small {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.prompt_title_black_small {
+    background-color: #f5f5f5;
+    color: #4a4a4a;
+    border: 1px solid #ddd !important;
+}
+.prompt_title_black_small:hover {
+    background-color: #e0e0e0;
+}
+
+.prompt_title_blue_small {
+    background-color: #eef6fc;
+    color: #209cee;
+    border: 1px solid #209cee !important;
+}
+.prompt_title_blue_small:hover {
+    background-color: #209cee;
+    color: white;
+}
+
+/* --- VIDEO & IMAGES --- */
+
+.video-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0; /* Reduced margin */
+    min-height: 400px;
+}
+
+.result-video {
+    width: 60%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.im_container img {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* --- LAYOUT CONTAINERS --- */
+
+.page-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.intro-container, 
+.abstract-container {
+    width: 62%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.abstract-container p {
+    font-size: 18px;
+}
+
+.method-container, 
+.ack-container, 
+.bib-container {
+    width: 62%; /* Use full available width of page-container */
+    /* max-width: 100%; */
+    margin: 0 auto;
+    margin-bottom: 30px; /* Reduced spacing between sections */
+}
+
+/* TL;DR Box styling - Removed Box */
+.tldr-section .intro-container {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 0px;
+    width: 62%;
+}
+
+.intro-paragraph_bold {
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 20px;
+}
+.intro-paragraph p {
+    width: 100%;
+    font-size: 18px;
+}
+.interactive_bold {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* --- BIBTEX --- */
+
+.code-container {
+    width: 100%;
+    background-color: #f4f6f8;
+    border-radius: 6px;
+    padding: 15px;
+    border: 1px solid #e1e4e8;
+}
+
+.bib-container code {
+    font-family: "Consolas", "Monaco", monospace;
+    color: #24292e;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+/* --- RESULTS SECTION --- */
+p2 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    display: block; /* Make p2 behave like a block element */
+}
+
+.results-section {
+    width: 100%;
+    margin: 60px auto;
+}
+
+.results-section .abstract-container {
+    width: 62%; /* Same as other sections */
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.results-section h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.results-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-bottom: 0px;
+    align-items: end;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    /* Removed transition - no hover effect */
+}
+
+/* Removed hover effect completely */
+/* .result-item img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+} */
+
+.result-label {
+    margin-top: 10px;
+    /* margin-bottom: 0px; */
+
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+/* Simple footnote without box */
+.row-footnote {
+    color: #1a1a1a;
+    margin: 10px 0 15px 0; /* FIXED: small top margin, larger bottom margin */
+    text-align: left;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .results-row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .results-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .result-item img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .results-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .result-item img {
+        height: 150px;
+    }
+    
+    .results-section .abstract-container {
+        width: 90%;
+    }
+}
+
+/* --- RESULTS SLIDER --- */
+.results-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.results-slides-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+}
+
+.results-slides-inner {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: 100%;
+
+}
+
+.results-slide {
+    min-width: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+/* Arrow Buttons */
+.slider-arrow {
+    background-color: white;
+    border: 1px solid #209cee;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    color: #209cee;
+}
+
+.slider-arrow:hover {
+    background-color: #209cee;
+    color: white;
+    transform: scale(1.1);
+}
+
+.slider-arrow:active {
+    transform: scale(0.95);
+}
+
+.slider-arrow svg {
+    pointer-events: none;
+}
+
+/* Slide Indicators (Dots) */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background-color: #bbb;
+}
+
+.dot.active {
+    background-color: #209cee;
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .slider-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .slider-arrow svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .results-slider-wrapper {
+        gap: 10px;
+    }
+}
+
+/* --- MOBILE --- */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .result-video {
+        width: 100%;
+    }
+
+    .grid-cell {
+        width: 50%; /* Full tightness on mobile */
+        padding: 0;
+    }
+}
