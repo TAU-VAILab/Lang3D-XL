@@ -524,11 +524,11 @@ p2 {
 }
 
 .gif-grid-container {
-    width: 50%; /* Reduced from 62% */
+    width: 62%; /* Wider to fit 4 items in a row */
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px; /* Slightly tighter gap */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns instead of 2 */
+    gap: 20px;
 }
 
 .gif-item {
